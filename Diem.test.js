@@ -2,9 +2,9 @@
 const Diem = require('./Diem');
 const assert = require('assert');
 
-describe('Điểm', () =>
+describe('Lớp Diem', () =>
 {
-    describe('#calculateDistance()', () =>
+    describe('#calculateDistance(): Tính khoảng cách giữa 2 điểm', () =>
     {
         it('Should return positive distance betwwen two points', () =>
         {

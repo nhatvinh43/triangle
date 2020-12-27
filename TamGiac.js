@@ -1,10 +1,10 @@
 module.exports = class TamGiac
 {
-    constructor([{ point1, point2 }, { point3, point4 }, { point5, point6 }])
+    constructor(point1, point2, point3)
     {
         this.firstSide = point1.calculateDistance(point2);
-        this.secondSide = point3.calculateDistance(point4);;
-        this.thirdSide = point5.calculateDistance(point6);
+        this.secondSide = point2.calculateDistance(point3);;
+        this.thirdSide = point1.calculateDistance(point3);
     }
 
     isValid()
@@ -16,7 +16,7 @@ module.exports = class TamGiac
 
     calculatePerimeter()
     {
-        return (this.isValid() && this.firstSide + this.secondSide + this.thirdSide);
+        return (this.isValid() && (this.firstSide + this.secondSide + this.thirdSide).toFixed(2) - 0);
     }
 
 
