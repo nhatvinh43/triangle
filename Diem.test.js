@@ -39,15 +39,15 @@ describe('Lớp Diem', () =>
             assert.strictEqual(firstPoint.calculateDistance(secondPoint), 35.74);
         })
 
-        it('Should return error when one point has invalid character', () =>
+        it('Should return error message when one point has invalid character', () =>
         {
             firstPoint = new Diem(-5, 'a');
             secondPoint = new Diem(21, 1);
-            assert.strictEqual(typeof firstPoint.calculateDistance(secondPoint) !== 'Number', true);
+            assert.strictEqual(firstPoint.calculateDistance(secondPoint), "Invalid point");
 
             firstPoint = new Diem(-5, 1);
             secondPoint = new Diem(21, 'c');
-            assert.strictEqual(typeof firstPoint.calculateDistance(secondPoint) !== 'Number', true);
+            assert.strictEqual(firstPoint.calculateDistance(secondPoint), "Invalid point");
 
         })
 
