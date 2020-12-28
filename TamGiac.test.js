@@ -285,7 +285,7 @@ describe('Lớp TamGiac', () =>
 
             let triangle = new TamGiac(point1, point2, point3);
 
-            assert.strictEqual(triangle.classifyTriangle(), "Invalid triangle");
+            assert.strictEqual(triangle.classifyTriangle(), "Không phải tam giác");
         })
     })
 
