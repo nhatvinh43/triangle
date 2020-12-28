@@ -58,6 +58,6 @@ module.exports = class TamGiac
         if (this.isRight()) return "Vuông";
         if (this.isIsosceles()) return "Cân";
         if (this.isValid()) return "Thường";
-        return "Không phải tam tác";
+        return "Không phải tam giác";
     }
 }
