@@ -35,23 +35,20 @@ module.exports = class TamGiac
     //Tam giac vuong
     isRight()
     {
-        return (this.isValid() && (Math.pow(this.firstSide, 2) === Math.pow(this.secondSide + this.thirdSide, 2) ||
-            Math.pow(this.secondSide, 2) === Math.pow(this.firstSide + this.thirdSide, 2) ||
-            Math.pow(this.thirdSide, 2) === Math.pow(this.firstSide + this.secondSide, 2)
+        return (this.isValid() && (Math.pow(this.firstSide, 2) === Math.pow(this.secondSide,2) + Math.pow( this.thirdSide, 2) ||
+        Math.pow(this.secondSide, 2) === Math.pow(this.firstSide,2) + Math.pow( this.thirdSide, 2) ||
+        Math.pow(this.thirdSide, 2) === Math.pow(this.secondSide,2) + Math.pow( this.firstSide, 2)
         ));
     }
 
     //Vuong can
     isRightAndIsosceles()
     {
-        return (this.isIsosceles() && this.isRight);
+        return (this.isIsosceles() && this.isRight());
     }
 
     //Tam giac thuong
-    isNormal()
-    {
-        return (this.isValid());
-    }
+
 
     //Phan loai tam giac
     classifyTriangle()
@@ -60,7 +57,7 @@ module.exports = class TamGiac
         if (this.isRightAndIsosceles()) return "Vuông cân";
         if (this.isRight()) return "Vuông";
         if (this.isIsosceles()) return "Cân";
-        if (this.isNormal()) return "Thường";
+        if (this.isValid()) return "Thường";
         return "Không phải tam tác";
     }
 }
